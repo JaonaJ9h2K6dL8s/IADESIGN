@@ -1,0 +1,17 @@
+node_modules/
+dist/
+dist-electron/
+release/
+release-*/
+.runtime-smoke/
+.runtime-ui-smoke/
+tmp-smoke*/
+data/
+artifacts/
+*.sqlite
+*.sqlite-*
+.env
+.env.*
+!.env.example
+*.pem
+*.key

@@ -1,0 +1,463 @@
+@media (max-width: 860px) {
+  body {
+    min-width: 0;
+  }
+
+  .app-shell {
+    height: 100dvh;
+    min-height: 0;
+  }
+
+  .topbar {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) auto;
+    gap: 6px;
+    padding-inline: 10px;
+  }
+
+  .brand-lockup,
+  .document-title,
+  .top-actions {
+    min-width: 0;
+  }
+
+  .brand-lockup {
+    gap: 7px;
+  }
+
+  .document-title {
+    gap: 4px;
+    overflow: hidden;
+  }
+
+  .document-title input {
+    width: min(150px, 24vw);
+    min-width: 0;
+  }
+
+  .top-actions {
+    gap: 4px;
+  }
+
+  .tool-rail {
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+
+  .rail-bottom {
+    flex: none;
+  }
+
+  .asset-sidebar {
+    width: min(280px, calc(100vw - 46px));
+  }
+
+  .editor-toolbar {
+    min-width: 0;
+    gap: 6px;
+    padding-inline: 8px;
+  }
+
+  .breadcrumb {
+    min-width: 0;
+    flex: 1;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .breadcrumb b {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .editor-toolbar > div:last-child {
+    min-width: 0;
+    gap: 4px;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .editor-toolbar > div:last-child::-webkit-scrollbar {
+    display: none;
+  }
+
+  .toolbar-action {
+    flex: none;
+  }
+
+  .canvas-viewport {
+    justify-content: safe center;
+    align-items: safe center;
+    padding: 14px 10px 36px;
+  }
+
+  .canvas-footer > div:first-child {
+    min-width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .inspector {
+    overflow: auto;
+    overscroll-behavior: contain;
+  }
+
+  .inspector-tabs {
+    min-width: 0;
+  }
+
+  .modal-backdrop {
+    place-items: center;
+    overflow-y: auto;
+    padding: 12px;
+  }
+
+  .modal-backdrop > section {
+    max-width: 100%;
+    max-height: calc(100dvh - 24px);
+    overflow: auto;
+  }
+
+  .assistant-modal {
+    width: min(390px, 100%);
+  }
+
+  .production-modal {
+    width: min(620px, 100%);
+  }
+
+  .optimizer-modal {
+    width: min(900px, 100%);
+  }
+
+  .product-modal {
+    width: min(800px, calc(100vw - 24px));
+    max-height: calc(100dvh - 24px);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .product-preview {
+    min-height: 0;
+    height: min(58vh, 500px);
+  }
+
+  .product-modal > footer {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .mask-editor-modal,
+  .crop-editor-modal {
+    width: min(850px, 100%);
+    max-height: calc(100dvh - 24px);
+  }
+}
+
+@media (max-width: 680px) {
+  .topbar {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) auto;
+    gap: 4px;
+    padding-inline: 7px;
+  }
+
+  .brand-name {
+    font-size: 18px;
+  }
+
+  .brand-lockup {
+    gap: 5px;
+  }
+
+  .document-title input {
+    width: min(116px, 25vw);
+    font-size: 10px;
+  }
+
+  .save-state {
+    gap: 3px;
+    font-size: 8px;
+    white-space: nowrap;
+  }
+
+  .top-actions {
+    gap: 2px;
+  }
+
+  .studio,
+  .studio.panel-collapsed {
+    grid-template-columns: 42px minmax(0, 1fr) 168px;
+  }
+
+  .studio.inspector-collapsed,
+  .studio.panel-collapsed.inspector-collapsed {
+    grid-template-columns: 42px minmax(0, 1fr) 38px;
+  }
+
+  .asset-sidebar {
+    left: 42px;
+    top: 52px;
+    bottom: 25px;
+    width: min(280px, calc(100vw - 54px));
+  }
+
+  .rail-button {
+    width: 40px;
+    min-height: 44px;
+    font-size: 8px;
+  }
+
+  .inspector-tabs {
+    gap: 6px;
+    padding-inline: 6px;
+  }
+
+  .inspector-tabs > span {
+    display: none;
+  }
+
+  .editor-toolbar > div:last-child {
+    gap: 3px;
+  }
+
+  .toolbar-action {
+    gap: 4px;
+    padding: 6px;
+    font-size: 8px;
+  }
+
+  .assistant-modal,
+  .production-modal,
+  .optimizer-modal {
+    border-radius: 7px;
+  }
+
+  .production-modal > header,
+  .production-content,
+  .production-modal > footer {
+    padding-inline: 12px;
+  }
+
+  .production-modes {
+    gap: 5px;
+    padding-inline: 12px;
+  }
+
+  .production-modes button {
+    font-size: 8px;
+  }
+
+  .optimizer-grid {
+    padding-inline: 12px;
+  }
+
+  .optimizer-modal > p,
+  .optimizer-modal > footer,
+  .optimizer-modal > .layout-modal-footer {
+    margin-inline: 12px;
+  }
+
+  .product-modal > header,
+  .product-modal > footer {
+    padding-inline: 10px;
+  }
+
+  .product-modal > footer > div {
+    flex-wrap: wrap;
+  }
+
+  .mask-editor-modal,
+  .crop-editor-modal {
+    padding-inline: 12px;
+  }
+}
+
+@media (max-width: 420px) {
+  .app-shell {
+    min-height: 0;
+  }
+
+  .topbar {
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    gap: 2px;
+    padding-inline: 5px;
+  }
+
+  .brand-divider,
+  .workspace-switch {
+    display: none;
+  }
+
+  .brand-name {
+    font-size: 17px;
+  }
+
+  .brand-lockup {
+    gap: 4px;
+  }
+
+  .document-title {
+    gap: 3px;
+  }
+
+  .document-title input {
+    width: min(88px, 22vw);
+    padding: 0;
+    font-size: 9px;
+  }
+
+  .save-state {
+    gap: 0;
+    font-size: 0;
+  }
+
+  .top-actions {
+    gap: 1px;
+  }
+
+  .icon-button,
+  .language-button {
+    width: 24px;
+    height: 26px;
+  }
+
+  .share-button {
+    height: 28px;
+    gap: 3px;
+    padding-inline: 5px;
+    font-size: 8px;
+  }
+
+  .studio,
+  .studio.panel-collapsed {
+    grid-template-columns: 38px minmax(0, 1fr) 148px;
+  }
+
+  .studio.inspector-collapsed,
+  .studio.panel-collapsed.inspector-collapsed {
+    grid-template-columns: 38px minmax(0, 1fr) 36px;
+  }
+
+  .asset-sidebar {
+    left: 38px;
+    width: min(280px, calc(100vw - 46px));
+  }
+
+  .rail-button {
+    width: 36px;
+    min-height: 42px;
+    gap: 3px;
+    font-size: 7px;
+  }
+
+  .rail-button svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  .sidebar-toggle,
+  .rail-settings {
+    width: 27px;
+    height: 27px;
+  }
+
+  .editor-toolbar {
+    height: 42px;
+    padding-inline: 5px;
+  }
+
+  .breadcrumb {
+    gap: 3px;
+    font-size: 8px;
+  }
+
+  .editor-toolbar > div:last-child {
+    gap: 2px;
+  }
+
+  .toolbar-action {
+    gap: 3px;
+    padding: 5px 4px;
+    font-size: 7px;
+  }
+
+  .toolbar-action svg {
+    width: 12px;
+    height: 12px;
+  }
+
+  .canvas-viewport {
+    padding: 8px 4px 32px;
+  }
+
+  .canvas-footer {
+    gap: 5px;
+    padding-inline: 6px;
+    font-size: 8px;
+  }
+
+  .canvas-footer > div,
+  .canvas-controls {
+    min-width: 0;
+    gap: 5px;
+  }
+
+  .canvas-footer > div:first-child {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .canvas-controls span {
+    white-space: nowrap;
+  }
+
+  .app-status {
+    padding-inline: 7px;
+    font-size: 8px;
+  }
+
+  .app-status button {
+    font-size: 8px;
+  }
+
+  .assistant-modal,
+  .production-modal,
+  .optimizer-modal,
+  .product-modal,
+  .mask-editor-modal,
+  .crop-editor-modal {
+    font-size: 11px;
+  }
+
+  .assistant-modal {
+    padding: 14px;
+  }
+
+  .production-modes {
+    grid-template-columns: 1fr;
+  }
+
+  .production-modes button {
+    min-height: 30px;
+  }
+
+  .product-preview {
+    height: min(48vh, 320px);
+  }
+
+  .product-modal > footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .mask-editor-tools button,
+  .mask-editor-modal > footer button,
+  .crop-editor-modal > footer button {
+    padding-inline: 7px;
+    font-size: 8px;
+  }
+
+  .mask-editor-sliders {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "name": "iadesign",
+  "version": "1.0.0",
+  "main": "electron/main.cjs",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently -k \"npm:api:dev\" \"npm:vite\"",
+    "api:dev": "tsx watch electron/server.ts",
+    "vite": "vite",
+    "build": "tsc --noEmit && vite build && npm run build:api",
+    "build:api": "esbuild electron/server.ts --bundle --platform=node --format=cjs --external:sql.js --external:sharp --external:@napi-rs/keyring --outfile=dist-electron/server.cjs",
+    "start": "node dist-electron/server.cjs",
+    "electron:dev": "wait-on http://127.0.0.1:5173 tcp:4174 && electron . --app-dev-server",
+    "electron:build": "npm run build && electron-builder --win nsis --x64",
+    "test": "tsc --noEmit && tsx --test tests/local-ai.test.ts tests/production-automation.test.ts tests/production-engines.test.ts tests/smart-layout.test.ts tests/commons-search.test.ts tests/backend-integration.test.mjs tests/backup.test.mjs",
+    "test:editor": "node tests/editor-operations.playwright.mjs",
+    "test:smart-layout": "node tests/smart-layout.playwright.mjs",
+    "test:windows-backup": "node tests/windows-backup-restore.playwright.mjs",
+    "test:commons-live": "node tests/commons-search-live.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "AI-powered graphic design and print production desktop studio",
+  "dependencies": {
+    "@huggingface/transformers": "^4.3.2",
+    "@napi-rs/keyring": "^2.1.2",
+    "@react-three/drei": "^10.7.9",
+    "@react-three/fiber": "^9.8.2",
+    "drizzle-orm": "^0.45.4",
+    "express": "^5.3.0",
+    "konva": "^10.9.1",
+    "lucide-react": "^1.68.0",
+    "pdf-lib": "^1.17.1",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "react-konva": "^19.3.2",
+    "sharp": "^0.35.5",
+    "sql.js": "^1.15.2",
+    "three": "^0.187.0",
+    "zustand": "^5.0.16"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.64.1",
+    "@tailwindcss/vite": "^4.3.4",
+    "@types/express": "^5.0.6",
+    "@types/node": "^26.6.6",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@types/sql.js": "^1.4.11",
+    "@vitejs/plugin-react": "^4.7.0",
+    "concurrently": "^9.2.5",
+    "electron": "^45.2.2",
+    "electron-builder": "^26.18.0",
+    "esbuild": "^0.28.2",
+    "tailwindcss": "^4.3.4",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vite": "^6.4.5",
+    "wait-on": "^9.5.1"
+  },
+  "build": {
+    "appId": "studio.muse.aidesign",
+    "productName": "AI Design Studio",
+    "directories": {
+      "output": "release-verified"
+    },
+    "files": [
+      "dist/**/*",
+      "electron/main.cjs",
+      "electron/preload.cjs",
+      "electron/backup.cjs",
+      "dist-electron/**/*.cjs",
+      "node_modules/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "include": "build/installer.nsh"
+    }
+  }
+}

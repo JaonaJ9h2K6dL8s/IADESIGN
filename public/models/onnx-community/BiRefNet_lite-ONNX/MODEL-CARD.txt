@@ -1,0 +1,14 @@
+BiRefNet Lite 512x512 ONNX
+
+This local general-purpose foreground segmentation model is an ONNX re-export of ZhengPeng/BiRefNet_lite, published by Studio Ludens as studioludens/birefnet-lite-512. It is selected for general-object cutouts; the separate MODNet model remains available for portrait matting.
+
+Pinned model revision: 962e67969ec6acec9c19fab76acee4f5e22e990c
+Source: https://huggingface.co/studioludens/birefnet-lite-512/tree/962e67969ec6acec9c19fab76acee4f5e22e990c
+Model card: https://huggingface.co/studioludens/birefnet-lite-512/raw/962e67969ec6acec9c19fab76acee4f5e22e990c/README.md
+Source model: https://huggingface.co/ZhengPeng/BiRefNet_lite
+
+The pinned 512x512 export is bundled as ONNX fp16 weights with fp32 inputs and outputs (`onnx/model_fp16.onnx`, 94 MiB). The FP32 duplicate is not bundled. The 512px export reduces memory versus the upstream 1024px browser export; fine detail on large images may be limited by its model input resolution.
+
+License: MIT. Include the adjacent LICENSE file with redistribution. This exported model and the original BiRefNet Lite weights retain their upstream attribution. The license and model card are bundled with the model.
+
+No image quality or speed claim is made until local application benchmarks are completed.

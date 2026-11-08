@@ -1,0 +1,9 @@
+Xenova/modnet quantized ONNX model
+
+Model repository: https://huggingface.co/Xenova/modnet
+Pinned revision: fa2fa546052fba4c08921230a26cc69a333fca12
+Model: MODNet, trimap-free real-time portrait matting
+License: Apache-2.0 (model repository metadata)
+Runtime: @huggingface/transformers, ONNX Runtime Web
+
+MODNet is trained for portrait/person matting. Results on non-person objects are not guaranteed; the application exposes a mask editor and preserves the original image.
